@@ -28,7 +28,7 @@ shutil.rmtree("/app/tmp", ignore_errors=True)
 shutil.rmtree("/app/data/output_data", ignore_errors=True)
 
 # config
-config = Config('/app/mhub/monai_bundle/config/config.yml')
+config = Config('/app/mhub/monai_thymus_bundle/config/config.yml')
 config.verbose = True  # TODO: define levels of verbosity and integrate consistently. 
 config.debug = False
 
@@ -52,6 +52,6 @@ DsegConverter(config).execute()
 # organize data into output folder
 organizer = DataOrganizer(config, set_file_permissions=sys.platform.startswith('linux'))
 organizer.setTarget(DataType(FileType.NIFTI, CT), "/app/data/output_data/image.nii.gz")
-organizer.setTarget(DataType(FileType.NIFTI, SEG), "/app/data/output_data/spleen.nii.gz")
-organizer.setTarget(DataType(FileType.DICOMSEG, SEG), "/app/data/output_data/spleen.seg.dcm")
+organizer.setTarget(DataType(FileType.NIFTI, SEG), "/app/data/output_data/thymus.nii.gz")
+organizer.setTarget(DataType(FileType.DICOMSEG, SEG), "/app/data/output_data/thymus.seg.dcm")
 organizer.execute()

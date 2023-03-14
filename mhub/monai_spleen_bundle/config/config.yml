@@ -1,0 +1,13 @@
+general:
+  data_base_dir: /app/data
+modules:
+  UnsortedInstanceImporter:
+    input_dir: input_data
+  DataSorter:
+    base_dir: /app/data/sorted
+    structure: '%SeriesInstanceUID/dicom/%SOPInstanceUID.dcm'
+  BundleRunner:
+    run_key: "evaluating"
+  DsegConverter:
+    dicomseg_json_path: /app/mhub/monai_spleen_bundle/config/spleen_meta.json
+    skip_empty_slices: True
