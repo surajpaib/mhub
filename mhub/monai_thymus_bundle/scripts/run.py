@@ -18,7 +18,7 @@ from mhub.mhubio.modules.importer.DataSorter import DataSorter
 from mhub.mhubio.modules.convert.NiftiConverter import NiftiConverter
 from mhub.mhubio.modules.convert.DsegConverter import DsegConverter
 from mhub.mhubio.modules.organizer.DataOrganizer import DataOrganizer
-from mhub.monai_bundle.utils.BundleRunner import BundleRunner
+from mhub.monai_thymus_bundle.utils.BundleRunner import BundleRunner
 
 # clean-up
 import shutil
