@@ -2,7 +2,7 @@
 FROM mhubai/base:cuda12.0
 
 # Install TotalSegmentator
-RUN pip3 install --no-cache-dir monai fire
+RUN pip3 install --no-cache-dir monai[ignite] fire
 # Pull monai bundle 
 ARG BUNDLE_URL="https://github.com/Project-MONAI/model-zoo/releases/download/hosting_storage_v1/spleen_ct_segmentation_v0.3.8.zip"
 
