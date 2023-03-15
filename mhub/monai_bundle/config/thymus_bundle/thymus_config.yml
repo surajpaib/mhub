@@ -8,6 +8,12 @@ modules:
     structure: '%SeriesInstanceUID/dicom/%SOPInstanceUID.dcm'
   BundleRunner:
     run_key: "inference"
+    meta_file: "/app/bundle/configs/metadata.json"
+    config_file: "/app/bundle/configs/inference.yaml"
+    logging_file: "/app/bundle/configs/logging.conf"
+    bundle_root: "/app/bundle"
   DsegConverter:
-    dicomseg_json_path: /app/mhub/monai_thymus_bundle/config/thymus_meta.json
+    dicomseg_json_path: /app/mhub/monai_bundle/config/meta.json
     skip_empty_slices: True
+  DataOrganizer:
+    label: "thymus"

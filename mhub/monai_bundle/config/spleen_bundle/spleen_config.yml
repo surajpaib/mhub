@@ -9,5 +9,5 @@ modules:
   BundleRunner:
     run_key: "evaluating"
   DsegConverter:
-    dicomseg_json_path: /app/mhub/monai_spleen_bundle/config/spleen_meta.json
+    dicomseg_json_path: /app/mhub/monai_bundle/config/meta.json
     skip_empty_slices: True

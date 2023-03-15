@@ -30,11 +30,16 @@ class BundleRunner(ModelRunner):
         # TODO: This runs it individually for each image, this is highly inefficient,
         # needs to be updated to run in batch mode.
         run(self.c['run_key'], meta_file="/app/bundle/configs/metadata.json", \
-                        config_file="/app/bundle/configs/inference.json", \
+                        config_file="/app/bundle/configs/inference.yaml", \
                          logging_file="/app/bundle/configs/logging.conf", \
-                            **{"datalist": [inp_data.abspath], "output_dir": out_dir, "bundle_root": "/app/bundle"}
+                            **{"datalist": [inp_data.abspath], "output_dir": out_dir, "bundle_root": "/app/bundle/"}
                 )
 
+        run(self.c['run_key'], meta_file=self.c["meta_file"], \
+                        config_file=self.c["config_file"], \
+                         logging_file=self.c["logging_file"], \
+                            **{"datalist": [inp_data.abspath], "output_dir": out_dir, "bundle_root": self.c["bundle_root"]}
+                )
         # add output data
         for out_file in Path(out_dir).rglob("*.nii.gz"):
             out_file = str(out_file)
