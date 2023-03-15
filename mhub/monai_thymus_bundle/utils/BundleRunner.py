@@ -32,7 +32,7 @@ class BundleRunner(ModelRunner):
         run(self.c['run_key'], meta_file="/app/bundle/configs/metadata.json", \
                         config_file="/app/bundle/configs/inference.yaml", \
                          logging_file="/app/bundle/configs/logging.conf", \
-                            **{"datalist": [inp_data.abspath], "output_dir": out_dir, "bundle_root": "/app/bundle"}
+                            **{"datalist": [inp_data.abspath], "output_dir": out_dir, "bundle_root": "/app/bundle/"}
                 )
 
         # add output data
