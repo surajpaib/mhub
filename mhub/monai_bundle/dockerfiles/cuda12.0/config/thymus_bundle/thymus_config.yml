@@ -7,11 +7,12 @@ modules:
     base_dir: /app/data/sorted
     structure: '%SeriesInstanceUID/dicom/%SOPInstanceUID.dcm'
   BundleRunner:
-    run_key: "inference"
+    run_key: "inference" # Key in the bundle config file to run
+    data_key: "image" # Input data key for the dataset#data in the bundle
     meta_file: "/app/bundle/configs/metadata.json"
     config_file: "/app/bundle/configs/inference.yaml"
     logging_file: "/app/bundle/configs/logging.conf"
-    bundle_root: "/app/bundle"
+    bundle_root: "/app/bundle/"
   DsegConverter:
     dicomseg_json_path: /app/mhub/monai_bundle/config/meta.json
     skip_empty_slices: True

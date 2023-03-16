@@ -14,6 +14,10 @@ RUN rm "temp.zip"
 # Move all bundle files to root
 RUN mv bundle/* .
 
+COPY config/thymus_bundle/thymus_config.yml /app/mhub/monai_bundle/config/config.yml
+COPY config/thymus_bundle/thymus_meta.json /app/mhub/monai_bundle/config/meta.json
+
+
 
 # Default run script
 CMD ["python3", "/app/mhub/monai_bundle/scripts/run.py"]
